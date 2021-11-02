@@ -1,19 +1,13 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//WRITE YOUR NAME BELOW
-//MATHIAS
-//PATRICK
-//PHILLYCONCARNE
-//VINCENT
-
-public class TestName : MonoBehaviour
+public class Character : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
-        
+        //Salut les ptits potes
     }
 
     // Update is called once per frame
