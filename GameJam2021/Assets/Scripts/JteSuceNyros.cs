@@ -8,6 +8,7 @@ public class JteSuceNyros : MonoBehaviour
     void Start()
     {
         // 8===D
+        //ok jaime
     }
 
     // Update is called once per frame
