@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class PickingUpObject : MonoBehaviour
 {
+
+    //TO SETUP:
+    //Object to pickup must have the tag "QuestItem"
+    //Object to pickup must have a rigidbody
+    //Press "E" to grab an item an "E" again to release it
+
     public float range = 25f;
     public float moveForce = 250f;
     public Transform holdParent;
