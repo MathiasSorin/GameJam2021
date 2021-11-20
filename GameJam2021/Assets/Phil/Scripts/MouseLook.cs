@@ -14,6 +14,7 @@ public class MouseLook : MonoBehaviour
     
     void Start()
     {
+        //playerBody.rotation = playerBody.rotation;
         Cursor.lockState = CursorLockMode.Locked;
 
         
