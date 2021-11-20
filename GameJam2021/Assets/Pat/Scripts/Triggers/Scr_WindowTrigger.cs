@@ -33,39 +33,37 @@ public class Scr_WindowTrigger : Scr_TriggerParent
 
     public override void DoEvent()
     {
-        if (!snapOne && plank.SetInPlace == false)
-        {
-            plank.GetComponent<Transform>().position = trSnapOne.position;
-            snapOne = true;
-            SetPlank();
-            return;
-        }
-        if (!snapTwo && plank.SetInPlace == false)
-        {
-            plank.GetComponent<Transform>().position = trSnapTwo.position;
-            snapTwo = true;
-            SetPlank();
-            return;
-        }
-        if (!snapThree && plank.SetInPlace == false)
-        {
-            plank.GetComponent<Transform>().position = trSnapThree.position;
-            snapThree = true;
-            SetPlank();
-            return;
-        }
-        
+            if (!snapOne && plank.SetInPlace == false)
+            {
+                plank.GetComponent<Transform>().position = trSnapOne.position;
+                snapOne = true;
+                SetPlank();
+                return;
+            }
+            if (!snapTwo && plank.SetInPlace == false)
+            {
+                plank.GetComponent<Transform>().position = trSnapTwo.position;
+                snapTwo = true;
+                SetPlank();
+                return;
+            }
+            if (!snapThree && plank.SetInPlace == false)
+            {
+                plank.GetComponent<Transform>().position = trSnapThree.position;
+                snapThree = true;
+                SetPlank();
+                return;
+            }
     }
 
     public override void CheckOverlap(string value)
     {
-        if(isOverlapped) DoEvent();
+        if(isOverlapped /*&& plank.isHeld == false*/) DoEvent();
     }
 
     public override void OnTriggerEnter(Collider other)
     {
-        
-        if(other.GetComponent<Scr_Plank>() != null)
+        if (other.GetComponent<Scr_Plank>() != null)
         {
             base.OnTriggerEnter(other);
             isOverlapped = true;
@@ -81,12 +79,14 @@ public class Scr_WindowTrigger : Scr_TriggerParent
 
     public void SetPlank()
     {
-        plank.GetComponent<Rigidbody>().useGravity = false;
-        plank.GetComponent<Rigidbody>().isKinematic = true;
-        plank.transform.Rotate(90, 0, 0, Space.World);
-        plank.transform.Rotate(0, Random.Range(-10, 10), 0, Space.Self);
-        isOverlapped = false;
-        plank.SetInPlace = true;
-
+        
+            plank.GetComponent<Rigidbody>().useGravity = false;
+            plank.GetComponent<Rigidbody>().isKinematic = true;
+            //plank.transform.Rotate(90, 0, 0, Space.World);
+            plank.transform.localEulerAngles = new Vector3(90,0,0); // set the rotation angle of the plank in the window trigger
+            plank.transform.Rotate(0, Random.Range(-10, 10), 0, Space.Self);
+            isOverlapped = false;
+            plank.SetInPlace = true;
+        
     }
 }
