@@ -16,14 +16,20 @@ public class Scr_PickupParent : MonoBehaviour, IPickupable
         
     }
 
-    public void DetectPickup(GameObject player)
+    public virtual void DetectPickup(GameObject player)
     {
         Debug.Log("Detect");
+
+        Pickup();
     }
 
-    public void Pickup()
+    public virtual void Pickup()
     {
-        Debug.Log("pickup");
+        if (Input.GetButton("Fire1"))
+        {
+            Debug.Log("pickup");
+            //ToDo: Pickup Item
+        }
     }
 
 }

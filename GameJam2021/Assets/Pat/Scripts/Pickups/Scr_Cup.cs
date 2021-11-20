@@ -12,14 +12,17 @@ public class Scr_Cup : Scr_PickupParent, IPickupable
 
     public void Update()
     {
-        if (Input.GetButton("Fire1"))
-        {
 
-            
-        }
     }
-    /*public void Pickup()
+    public override void Pickup()
     {
-        Debug.Log("pickup");
-    }*/
+        base.Pickup();
+    }
+
+    public override void DetectPickup(GameObject player)
+    {
+        //base.DetectPickup(player);
+        Debug.Log("Potato");
+    }
+
 }
