@@ -4,18 +4,26 @@ using UnityEngine;
 
 public class Scr_PickupP : MonoBehaviour, IPickupable
 {
-    // Start is called before the first frame update
-    void Start()
-    {
+    public bool isHeld = false;
+    public string Uiname;
+    
 
+    public virtual void Update()
+    {
+        if (isHeld)
+        {
+            Debug.Log("im held");
+        }
+
+        
     }
 
-    // Update is called once per frame
-    void Update()
+    public string IsLookedAt()
     {
+        return Uiname;
 
     }
-
+   
     public virtual void DetectPickup(GameObject player)
     {
         Debug.Log("Detect");
@@ -33,4 +41,6 @@ public class Scr_PickupP : MonoBehaviour, IPickupable
 
         }
     }
+
+    
 }

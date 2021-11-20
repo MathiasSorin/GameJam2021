@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class PickingUpObject : MonoBehaviour
 {
@@ -14,36 +16,120 @@ public class PickingUpObject : MonoBehaviour
     public float moveForce = 250f;
     public Transform holdParent;
     private GameObject heldObject;
+    public string textUI;
+    public TextMeshProUGUI tmpUI;
+
+    
 
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.E))
+        /*RaycastHit hit;
+        if (Physics.Raycast(transform.position, transform.forward, out hit, range))
         {
+            var pickUpObjectScript = hit.transform.gameObject.GetComponent<Scr_PickupP>();
+            if (pickUpObjectScript != null)
+            {
+                if (hit.transform.gameObject.tag == "QuestItem")
+                {
+                                          
+
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        if (heldObject == null)
+                        {
+
+                            if (hit.transform.gameObject.tag == "QuestItem")
+                            {
+                                PickupObject(hit.transform.gameObject);
+
+                            }
+                        }
+                        else
+                        {
+                            DropObject();
+
+                        }
+
+                    }
+                }
+                
+
+            }
+        
+              
+                       
+        }
+        */
+       
+        
+
+
+
+            if (Input.GetKeyDown(KeyCode.E))
+        {
+            RaycastHit hit;
+
             if (heldObject == null)
             {
-                RaycastHit hit;
+                
                 if (Physics.Raycast(transform.position, transform.forward, out hit, range))
                 {
                     if(hit.transform.gameObject.tag == "QuestItem")
                     {
                         PickupObject(hit.transform.gameObject);
                     }
-                    
+
 
                 }
             }
-            else
+            else 
             {
-                DropObject();
+                  
+                    DropObject();
+               
+                                           
 
             }
         }
+           
+        
+        RaycastHit hit2;
+        if (heldObject == null & Physics.Raycast(transform.position, transform.forward, out hit2, range))
+        {
+            var y = hit2.transform.gameObject.GetComponent<Scr_PickupP>();
+            
+            if (y != null && !y.isHeld) 
+            {
+                if (hit2.transform.gameObject.tag == "QuestItem")
+                {
+                    textUI = y.IsLookedAt();
+                    tmpUI.text = textUI;
+
+
+                }
+                
+            }
+            
+
+
+
+        }
+        else
+        {
+            textUI = "";
+
+            tmpUI.text = textUI;
+        }
+
+
 
         if (heldObject != null)
         {
             MoveObject();
         }
+
+        
 
 
         //RAYCAST DEBUG
@@ -70,12 +156,24 @@ public class PickingUpObject : MonoBehaviour
     {
         if (pickupObject.GetComponent<Rigidbody>())
         {
-            Rigidbody objectRb = pickupObject.GetComponent<Rigidbody>();
+            Rigidbody objectRb = pickupObject.GetComponent<Rigidbody>();                   
+           
+            var pickUpObjectScript = pickupObject.GetComponent<Scr_PickupP>();
+            if(pickUpObjectScript != null)
+            {
+                
+                pickUpObjectScript.isHeld = true;
+            }
+            
+
+
+
             objectRb.useGravity = false;
             objectRb.drag = 10;
 
             objectRb.transform.parent = holdParent;
             heldObject = pickupObject;
+            //heldObject.GetComponent<Scr_PickupP>().isHeld = true;
         }
     }
 
@@ -85,9 +183,15 @@ public class PickingUpObject : MonoBehaviour
     void DropObject()
     {
         Rigidbody heldRb = heldObject.GetComponent<Rigidbody>();
+        var pickUpObjectScript = heldObject.GetComponent<Scr_PickupP>();
+        if (pickUpObjectScript != null)
+        {
+            pickUpObjectScript.isHeld = false;
+        }
+
         heldRb.useGravity = true;
         heldRb.drag = 1;
-
+        //heldObject.GetComponent<Scr_PickupP>().isHeld = false;
         heldObject.transform.parent = null;
         heldObject = null;
     }
