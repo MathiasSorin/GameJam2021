@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Scr_Cup : MonoBehaviour, IPickupable
+public class Scr_Cup : Scr_PickupParent, IPickupable
 {
     //Trans
-    public void DetectPickup(GameObject player)
+    /*public void DetectPickup(GameObject player)
     {
         Debug.Log("Detect");
-    }
+    }*/
 
     public void Update()
     {
@@ -18,8 +18,8 @@ public class Scr_Cup : MonoBehaviour, IPickupable
             
         }
     }
-    public void Pickup()
+    /*public void Pickup()
     {
         Debug.Log("pickup");
-    }
+    }*/
 }

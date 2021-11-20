@@ -15,4 +15,15 @@ public class Scr_PickupParent : MonoBehaviour, IPickupable
     {
         
     }
+
+    public void DetectPickup(GameObject player)
+    {
+        Debug.Log("Detect");
+    }
+
+    public void Pickup()
+    {
+        Debug.Log("pickup");
+    }
+
 }
