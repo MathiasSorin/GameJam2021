@@ -587,7 +587,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerBody: {fileID: 687194215168173912}
   mouseSensitivity: 200
-  range: 25
+  range: 2
 --- !u!114 &4627080340925600131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -600,7 +600,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2bfd6ad9d36eef42b9099691e8e9031, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 25
+  range: 2
   moveForce: 250
   holdParent: {fileID: 7285153392508432262}
 --- !u!1 &687194215404531402
