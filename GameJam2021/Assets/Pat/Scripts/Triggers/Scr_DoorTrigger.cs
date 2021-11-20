@@ -23,7 +23,8 @@ public class Scr_DoorTrigger : Scr_TriggerParent
 
     public override void DoEvent()
     {
-        Debug.Log("Do the thing");
+        //base.DoEvent();
         //ToDo: Zombie Sound Stop/Ding Ding sound
+        Debug.Log("No More Zombies");
     }
 }

@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Scr_TriggerParent : MonoBehaviour
 {
-
     public GameObject obj;
-    private bool isOverlapped;
+    protected bool isOverlapped;
     public Color gizmoColor;
-    
+
+    protected bool triggered;
 
     void Start()
     {
@@ -24,10 +24,18 @@ public class Scr_TriggerParent : MonoBehaviour
     {
         if (isOverlapped)
         {
-            Debug.Log(value);
-            //ToDo:
-            DoEvent();
-            //ToDo: Set a case where it triggers another object
+            if (triggered)
+            {
+                //Here an event will be called, if no event is overidden, a string will be printed
+
+                
+                //Debug.Log(value);
+                //ToDo:
+                DoEvent();
+                //ToDo: Set a case where it triggers another object
+                triggered = false;
+            }
+
         }
 
     }
@@ -44,6 +52,7 @@ public class Scr_TriggerParent : MonoBehaviour
     {
         if (other.gameObject == obj)
         {
+            triggered = true;
             isOverlapped = true;
         }
     }
@@ -58,7 +67,6 @@ public class Scr_TriggerParent : MonoBehaviour
 
     public virtual void DoEvent()
     {
-        //Here an event will be called, if no event is overidden, a string will be printed
         Debug.LogError("WHAT IS THE OVERIDE EVENT");
     }
 }

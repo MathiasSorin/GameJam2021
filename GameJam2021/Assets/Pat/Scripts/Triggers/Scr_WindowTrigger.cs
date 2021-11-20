@@ -23,6 +23,7 @@ public class Scr_WindowTrigger : Scr_TriggerParent
 
     public override void DoEvent()
     {
+        Debug.Log("Snap Plank to Window");
         //ToDo: Snap Planks to window
     }
 }

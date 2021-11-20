@@ -23,6 +23,7 @@ public class Scr_DrawerTrigger : Scr_TriggerParent
 
     public override void DoEvent()
     {
+        Debug.Log("Open Drawer");
         //ToDo: Open Drawer
     }
 }
