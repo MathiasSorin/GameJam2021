@@ -4,5 +4,10 @@ using UnityEngine;
 
 public interface IPickupable
 {
-    //DoSomething
+    public void DetectPickup(GameObject player);
+
+    public void Pickup();
+    
 }
+
+
