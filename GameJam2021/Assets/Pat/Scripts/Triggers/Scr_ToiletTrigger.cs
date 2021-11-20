@@ -4,47 +4,45 @@ using UnityEngine;
 
 public class Scr_ToiletTrigger : Scr_TriggerParent
 {
-    private int objCount;
+    private int objCount = 0;
 
     void Start()
     {
-        
+        GetComponent<Renderer>().material.SetColor("_Color", gizmoColorVisible);
     }
 
     void Update()
     {
         CheckOverlap("Items");
+        Debug.Log(objCount);
     }
 
     public override void CheckOverlap(string value)
     {
-        base.CheckOverlap(value);
+        //base.CheckOverlap(value);
+        DoEvent();
     }
 
     public override void DoEvent()
     {
-        if (objCount >= 3) Debug.Log("Do the thing"); else objCount++;
+        if (objCount >= 3) Debug.Log("Flush the Zombies"); //else objCount++;
         //ToDo: Stop Zombie coming out of toilet
     }
 
     public override void OnTriggerEnter(Collider other)
     {
-        if(other.GetComponent<Scr_PickupParent>() != null)
+        if(other.GetComponent<Scr_PickupP>() != null)
         {
-            Debug.Log(other);
-            obj = other.gameObject;
-            triggered = true;
-            isOverlapped = true;
+            objCount++;
         }
 
     }
 
     public override void OnTriggerExit(Collider other)
     {
-        if (other.GetComponent<Scr_PickupParent>() != null)
+        if (other.GetComponent<Scr_PickupP>() != null)
         {
-            Debug.Log(other);
-            isOverlapped = false;
+            objCount--;
         }
     }
 }

@@ -8,7 +8,7 @@ public class Scr_DoorTrigger : Scr_TriggerParent
 
     void Start()
     {
-        
+        GetComponent<Renderer>().material.SetColor("_Color", gizmoColorVisible);
     }
 
     void Update()
@@ -25,6 +25,6 @@ public class Scr_DoorTrigger : Scr_TriggerParent
     {
         //base.DoEvent();
         //ToDo: Zombie Sound Stop/Ding Ding sound
-        Debug.Log("No More Zombies");
+        Debug.Log("No More Zombies at the door");
     }
 }

@@ -16,6 +16,8 @@ public class Scr_WindowTrigger : Scr_TriggerParent
     private bool snapThree = false;
 
     private bool plankPlaced = false;
+
+    private bool zombiesActive = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,12 +25,14 @@ public class Scr_WindowTrigger : Scr_TriggerParent
         trSnapOne = transform.GetChild(0).GetComponent<Transform>();
         trSnapTwo = transform.GetChild(1).GetComponent<Transform>();
         trSnapThree = transform.GetChild(2).GetComponent<Transform>();
+        GetComponent<Renderer>().material.SetColor("_Color",gizmoColorVisible);
     }
 
     // Update is called once per frame
     void Update()
     {
         CheckOverlap("Planks");
+        BoardCheck();
     }
 
     public override void DoEvent()
@@ -54,6 +58,8 @@ public class Scr_WindowTrigger : Scr_TriggerParent
                 SetPlank();
                 return;
             }
+
+
     }
 
     public override void CheckOverlap(string value)
@@ -88,5 +94,18 @@ public class Scr_WindowTrigger : Scr_TriggerParent
             isOverlapped = false;
             plank.SetInPlace = true;
         
+    }
+
+    public void BoardCheck()
+    {
+        if(snapOne && snapTwo && snapThree)
+        {
+            if (zombiesActive)
+            {
+            Debug.Log("No More Zombies at the window");
+                zombiesActive = false;
+                //ToDo: Feedback that Zombies have stopped
+            }
+        }
     }
 }

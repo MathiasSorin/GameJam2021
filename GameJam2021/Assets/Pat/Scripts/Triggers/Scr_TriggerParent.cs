@@ -7,6 +7,7 @@ public class Scr_TriggerParent : MonoBehaviour
     public GameObject obj;
     protected bool isOverlapped;
     public Color gizmoColor;
+    public Color gizmoColorVisible;
 
     protected bool triggered;
 
@@ -18,6 +19,7 @@ public class Scr_TriggerParent : MonoBehaviour
     private void Update()
     {
         CheckOverlap("test");
+
     }
 
     public virtual void CheckOverlap(string value)
@@ -47,6 +49,7 @@ public class Scr_TriggerParent : MonoBehaviour
         Gizmos.DrawWireCube(transform.position, transform.localScale);
 
     }
+
 
    public virtual void OnTriggerEnter(Collider other)
     {
