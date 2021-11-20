@@ -29,6 +29,8 @@ public class Scr_PickupParent : MonoBehaviour, IPickupable
         {
             Debug.Log("pickup");
             //ToDo: Pickup Item
+            //Change
+
         }
     }
 
