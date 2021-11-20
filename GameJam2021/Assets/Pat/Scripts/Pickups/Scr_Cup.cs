@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Scr_Cup : Scr_PickupParent, IPickupable
+public class Scr_Cup : Scr_PickupP, IPickupable
 {
     //Trans
     /*public void DetectPickup(GameObject player)
