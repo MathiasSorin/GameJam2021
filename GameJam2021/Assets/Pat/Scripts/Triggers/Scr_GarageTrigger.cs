@@ -35,4 +35,9 @@ public class Scr_GarageTrigger : Scr_TriggerParent
             DoEvent();
         }
     }
+
+    public bool AlarmOn
+    {
+        get { return alarmOn; }
+    }
 }

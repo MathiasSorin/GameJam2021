@@ -50,6 +50,8 @@ public class PickingUpObject : MonoBehaviour
                     if (hit.transform.gameObject.tag == "QuestItem" && hit.transform.gameObject.GetComponent<Scr_Drawer>() != null)
                     {
                         hit.transform.gameObject.GetComponent<Animator>().Play("DrawerClose");
+                        hit.transform.gameObject.GetComponent<Scr_Drawer>().CompleteObjective();
+
                     }
 
                 }

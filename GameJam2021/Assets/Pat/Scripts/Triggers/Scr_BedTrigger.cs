@@ -33,4 +33,9 @@ public class Scr_BedTrigger : Scr_TriggerParent
             DoEvent();
         }
     }
+    public bool ZombiesUnderBed
+    {
+        get { return zombiesUnderBed; }
+    }
+
 }

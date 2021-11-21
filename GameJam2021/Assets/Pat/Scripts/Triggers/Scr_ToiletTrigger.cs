@@ -64,4 +64,10 @@ public class Scr_ToiletTrigger : Scr_TriggerParent
         Gizmos.color = gizmoColor;
         Gizmos.DrawWireCube(transform.position, gameObject.GetComponent<BoxCollider>().size);
     }
+
+    public bool IsClogged
+    {
+        get { return isClogged; }
+    }
+
 }

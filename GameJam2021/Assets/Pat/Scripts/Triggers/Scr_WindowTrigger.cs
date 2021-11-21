@@ -16,7 +16,7 @@ public class Scr_WindowTrigger : Scr_TriggerParent
     private bool snapThree = false;
 
     private bool plankPlaced = false;
-
+    private bool isBarricaded = false;
     private bool zombiesActive = true;
     // Start is called before the first frame update
     void Start()
@@ -59,6 +59,7 @@ public class Scr_WindowTrigger : Scr_TriggerParent
                 plank.GetComponent<Transform>().position = trSnapThree.position;
                 snapThree = true;
                 SetPlank();
+            isBarricaded = true;
             sound.PlaySound();
             return;
             }
@@ -112,4 +113,10 @@ public class Scr_WindowTrigger : Scr_TriggerParent
             }
         }
     }
+
+    public bool IsBarricaded
+    {
+        get { return isBarricaded; }
+    }
+
 }
