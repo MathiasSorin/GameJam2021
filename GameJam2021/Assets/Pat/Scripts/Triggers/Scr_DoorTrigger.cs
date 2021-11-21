@@ -27,5 +27,6 @@ public class Scr_DoorTrigger : Scr_TriggerParent
         //ToDo: Zombie Sound Stop/Ding Ding sound
         Debug.Log("No More Zombies at the door");
         obj.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+        sound.PlaySound();
     }
 }
