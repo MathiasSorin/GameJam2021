@@ -42,7 +42,11 @@ public class PickingUpObject : MonoBehaviour
                     {
                         PickupObject(hit.transform.gameObject);
                     }
-
+                    
+                    if (hit.transform.gameObject.tag == "Untagged" && hit.transform.gameObject.GetComponent<Scr_Remote>() != null)
+                    {
+                        Debug.Log("Test");
+                    }
 
                 }
             }
