@@ -12,7 +12,7 @@ public class Scr_PickupP : MonoBehaviour, IPickupable
     {
         if (isHeld)
         {
-            Debug.Log("im held");
+            //Debug.Log("im held");
         }
 
         
