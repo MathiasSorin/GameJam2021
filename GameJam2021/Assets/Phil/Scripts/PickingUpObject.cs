@@ -38,7 +38,7 @@ public class PickingUpObject : MonoBehaviour
                 
                 if (Physics.Raycast(transform.position, transform.forward, out hit, range))
                 {
-                    if(hit.transform.gameObject.tag == "QuestItem")
+                    if(hit.transform.gameObject.tag == "QuestItem" && hit.transform.gameObject.GetComponent<Scr_Drawer>() == null)
                     {
                         PickupObject(hit.transform.gameObject);
                     }
@@ -46,6 +46,10 @@ public class PickingUpObject : MonoBehaviour
                     if (hit.transform.gameObject.tag == "Untagged" && hit.transform.gameObject.GetComponent<Scr_Remote>() != null)
                     {
                         Debug.Log("Test");
+                    }
+                    if (hit.transform.gameObject.tag == "QuestItem" && hit.transform.gameObject.GetComponent<Scr_Drawer>() != null)
+                    {
+                        hit.transform.gameObject.GetComponent<Animator>().Play("DrawerClose");
                     }
 
                 }
