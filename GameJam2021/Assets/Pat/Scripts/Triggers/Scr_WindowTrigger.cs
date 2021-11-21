@@ -93,7 +93,7 @@ public class Scr_WindowTrigger : Scr_TriggerParent
             plank.transform.Rotate(0, Random.Range(-10, 10), 0, Space.Self);
             isOverlapped = false;
             plank.SetInPlace = true;
-        
+
     }
 
     public void BoardCheck()
