@@ -43,21 +43,24 @@ public class Scr_WindowTrigger : Scr_TriggerParent
                 plank.GetComponent<Transform>().position = trSnapOne.position;
                 snapOne = true;
                 SetPlank();
-                return;
+            sound.PlaySound();
+            return;
             }
             if (!snapTwo && plank.SetInPlace == false)
             {
                 plank.GetComponent<Transform>().position = trSnapTwo.position;
                 snapTwo = true;
                 SetPlank();
-                return;
+            sound.PlaySound();
+            return;
             }
             if (!snapThree && plank.SetInPlace == false)
             {
                 plank.GetComponent<Transform>().position = trSnapThree.position;
                 snapThree = true;
                 SetPlank();
-                return;
+            sound.PlaySound();
+            return;
             }
 
 

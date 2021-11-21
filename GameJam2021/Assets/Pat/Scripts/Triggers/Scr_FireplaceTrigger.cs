@@ -47,6 +47,7 @@ public class Scr_FireplaceTrigger : Scr_TriggerParent
             aux.clip = fireSound;
             aux.Play();
             onFire = true;
+            sound.PlaySound();
         }
     }
 

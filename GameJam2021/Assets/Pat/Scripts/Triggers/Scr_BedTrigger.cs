@@ -20,6 +20,7 @@ public class Scr_BedTrigger : Scr_TriggerParent
             Destroy(zombieArms);
             zombiesUnderBed = false;
             aux.Stop();
+            sound.PlaySound();
         }
     }
 

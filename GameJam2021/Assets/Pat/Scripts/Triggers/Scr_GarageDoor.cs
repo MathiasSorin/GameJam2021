@@ -63,7 +63,8 @@ public class Scr_GarageDoor : Scr_TriggerParent
         {
             Destroy(collision.gameObject);
             batteryCount++;
-            Debug.Log(batteryCount);
+            sound.PlaySound();
+            //Debug.Log(batteryCount);
         }
     }
 
