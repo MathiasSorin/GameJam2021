@@ -43,6 +43,7 @@ public class Scr_GarageDoor : Scr_TriggerParent
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
+  
                 Debug.Log("I need to find 3 Batteries for the remote");
                 //toDo: On Screen Prompt for cant pick up
             }

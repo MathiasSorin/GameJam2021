@@ -5,6 +5,7 @@ using UnityEngine;
 public class Scr_ToiletTrigger : Scr_TriggerParent
 {
     private int objCount = 0;
+    private bool isClogged = false;
 
     void Start()
     {
@@ -14,7 +15,6 @@ public class Scr_ToiletTrigger : Scr_TriggerParent
     void Update()
     {
         CheckOverlap("Items");
-        Debug.Log(objCount);
     }
 
     public override void CheckOverlap(string value)
@@ -25,8 +25,13 @@ public class Scr_ToiletTrigger : Scr_TriggerParent
 
     public override void DoEvent()
     {
-        if (objCount >= 3) Debug.Log("Flush the Zombies"); //else objCount++;
-        //ToDo: Stop Zombie coming out of toilet
+        if (objCount >= 3 && !isClogged)
+        {
+            isClogged = true;
+            Debug.Log("Flush the Zombies"); //else objCount++;
+            //ToDo: Stop Zombie coming out of toilet
+
+        }
     }
 
     public override void OnTriggerEnter(Collider other)
@@ -44,5 +49,12 @@ public class Scr_ToiletTrigger : Scr_TriggerParent
         {
             objCount--;
         }
+    }
+
+    public override void OnDrawGizmos()
+    {
+        gizmoColor.a = 1.0f;
+        Gizmos.color = gizmoColor;
+        Gizmos.DrawWireCube(transform.position, gameObject.GetComponent<BoxCollider>().size);
     }
 }
