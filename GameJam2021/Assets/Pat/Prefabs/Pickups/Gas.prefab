@@ -128,6 +128,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isHeld: 0
   Uiname: Gas Can
+  pickupSound: {fileID: 8300000, guid: c445a597efbc1894ebcbccece8c39f1a, type: 3}
+  droppedSound: {fileID: 8300000, guid: 0b329b73e0ff0d746bc295f44722aace, type: 3}
 --- !u!1001 &3781308137310583946
 PrefabInstance:
   m_ObjectHideFlags: 0

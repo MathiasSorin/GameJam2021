@@ -6,16 +6,7 @@ public class Scr_Battery : Scr_PickupP, IPickupable
 {
     private bool setInPlace = false;
     // Start is called before the first frame update
-    void Start()
-    {
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     public override void Pickup()
     {
