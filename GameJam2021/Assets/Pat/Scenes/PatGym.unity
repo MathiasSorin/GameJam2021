@@ -1154,6 +1154,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isHeld: 0
   Uiname: 
+  pickupSound: {fileID: 0}
+  droppedSound: {fileID: 0}
 --- !u!54 &667679403
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1544,6 +1546,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isHeld: 0
   Uiname: Drawer
+  pickupSound: {fileID: 0}
+  droppedSound: {fileID: 0}
 --- !u!95 &846113539
 Animator:
   serializedVersion: 3
@@ -2772,7 +2776,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
