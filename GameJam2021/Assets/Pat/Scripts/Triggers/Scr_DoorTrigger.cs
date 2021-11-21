@@ -28,7 +28,8 @@ public class Scr_DoorTrigger : Scr_TriggerParent
         Debug.Log("No More Zombies at the door");
         obj.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         sound.PlaySound();
-    }
+         isBlocked = true;
+}
 
 
     public bool IsBlocked

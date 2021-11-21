@@ -10524,6 +10524,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 802861841}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1233755188 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2354882568226204470, guid: 10216536688e3a94ca9ad33dd73be0d2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1633025289}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8d02c2d590b7ea4091a5bc7b8e5d5da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1241584090 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 984447687242913515, guid: c6c193416a7f1f04f90e0af83a5813fc,
@@ -16577,7 +16589,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4843b62d73c39de49bfd8fd0648b469f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBeforeSwitchingScene: 120
+  timeBeforeSwitchingScene: 300
 --- !u!4 &2039410460
 Transform:
   m_ObjectHideFlags: 0
@@ -18373,6 +18385,11 @@ PrefabInstance:
       propertyPath: bed
       value: 
       objectReference: {fileID: 1971425348}
+    - target: {fileID: 3198005173345688325, guid: 9aba2f42ae3aefc4187e4ffbdd396518,
+        type: 3}
+      propertyPath: door
+      value: 
+      objectReference: {fileID: 1233755188}
     - target: {fileID: 3198005173345688325, guid: 9aba2f42ae3aefc4187e4ffbdd396518,
         type: 3}
       propertyPath: garage

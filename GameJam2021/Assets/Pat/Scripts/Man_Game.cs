@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Man_Game : MonoBehaviour
 {
@@ -13,15 +14,15 @@ public class Man_Game : MonoBehaviour
     public Scr_BedTrigger bed;
     public Scr_GarageTrigger garage;
     public Scr_Drawer drawer;
-
+    public Scr_DoorTrigger door;
 
 
 
     private void Update()
     {
-        if (toilet.IsClogged && window.IsBarricaded && garage.AlarmOn == false && fireplace.OnFire && bed.ZombiesUnderBed == false)
+        if (toilet.IsClogged && window.IsBarricaded && garage.AlarmOn == false && fireplace.OnFire && bed.ZombiesUnderBed == false && door.IsBlocked)
         {
-            Debug.Log("Done");
+            SceneManager.LoadScene("Win");
         }
 
     }
