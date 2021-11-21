@@ -64,7 +64,7 @@ public class Scr_WindowTrigger : Scr_TriggerParent
 
     public override void CheckOverlap(string value)
     {
-        if(isOverlapped /*&& plank.isHeld == false*/) DoEvent();
+        if(isOverlapped && plank.isHeld == false) DoEvent();
     }
 
     public override void OnTriggerEnter(Collider other)
