@@ -134,6 +134,7 @@ public class PickingUpObject : MonoBehaviour
             {
                 
                 pickUpObjectScript.isHeld = true;
+
             }
             
 
@@ -144,6 +145,9 @@ public class PickingUpObject : MonoBehaviour
 
             objectRb.transform.parent = holdParent;
             heldObject = pickupObject;
+            pickupObject.GetComponent<Scr_PickupP>().AuxToPlay.clip = pickupObject.GetComponent<Scr_PickupP>().pickupSound;
+            pickupObject.GetComponent<Scr_PickupP>().AuxToPlay.volume = 1.0f;
+            pickupObject.GetComponent<Scr_PickupP>().AuxToPlay.Play();
             //heldObject.GetComponent<Scr_PickupP>().isHeld = true;
         }
     }
@@ -157,6 +161,9 @@ public class PickingUpObject : MonoBehaviour
         var pickUpObjectScript = heldObject.GetComponent<Scr_PickupP>();
         if (pickUpObjectScript != null)
         {
+            pickUpObjectScript.AuxToPlay.clip = pickUpObjectScript.droppedSound;
+            pickUpObjectScript.AuxToPlay.volume = 0.1f;
+            pickUpObjectScript.AuxToPlay.Play();
             pickUpObjectScript.isHeld = false;
         }
 

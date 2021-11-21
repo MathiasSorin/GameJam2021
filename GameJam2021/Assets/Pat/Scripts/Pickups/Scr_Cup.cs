@@ -10,10 +10,6 @@ public class Scr_Cup : Scr_PickupP, IPickupable
         Debug.Log("Detect");
     }*/
 
-    public void Update()
-    {
-
-    }
     public override void Pickup()
     {
         base.Pickup();

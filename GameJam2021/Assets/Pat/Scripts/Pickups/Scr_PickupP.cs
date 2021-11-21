@@ -6,16 +6,30 @@ public class Scr_PickupP : MonoBehaviour, IPickupable
 {
     public bool isHeld = false;
     public string Uiname;
-    
+    private AudioSource auxToPlay;
+    public AudioClip pickupSound;
+    public AudioClip droppedSound;
+
+    public virtual void Start()
+    {
+        AudioSource aux = gameObject.AddComponent(typeof(AudioSource)) as AudioSource;
+
+
+        aux = GetComponent<AudioSource>();
+        aux.playOnAwake = false;
+        aux.clip = pickupSound;
+        auxToPlay = aux;
+    }
 
     public virtual void Update()
     {
         if (isHeld)
         {
             //Debug.Log("im held");
+
         }
 
-        
+
     }
 
     public string IsLookedAt()
@@ -23,7 +37,7 @@ public class Scr_PickupP : MonoBehaviour, IPickupable
         return Uiname;
 
     }
-   
+
     public virtual void DetectPickup(GameObject player)
     {
         Debug.Log("Detect");
@@ -42,5 +56,8 @@ public class Scr_PickupP : MonoBehaviour, IPickupable
         }
     }
 
-    
+    public AudioSource AuxToPlay{
+        get { return auxToPlay; }
+        }
+
 }
