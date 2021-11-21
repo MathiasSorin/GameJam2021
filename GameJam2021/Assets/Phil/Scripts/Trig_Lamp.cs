@@ -8,6 +8,7 @@ public class Trig_Lamp : MonoBehaviour
     public GameObject light2;
     private bool canBeActivated = true;
     public AudioSource aux;
+    private bool singleUse = true;
 
 
     private void Start()
@@ -23,7 +24,12 @@ public class Trig_Lamp : MonoBehaviour
             
             if (canBeActivated)
             {
-                LightOn();
+                if (singleUse)
+                {
+                    LightOn();
+                    singleUse = false;
+                }
+                
             }
 
         }
