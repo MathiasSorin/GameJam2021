@@ -13,7 +13,7 @@ public class Scr_TriggerParent : MonoBehaviour
 
     void Start()
     {
-        
+        //aux = GetComponent<AudioSource>();
     }
 
     private void Update()
