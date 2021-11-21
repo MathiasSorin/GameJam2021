@@ -77,4 +77,9 @@ public class Scr_FireplaceTrigger : Scr_TriggerParent
             hasMatches = false;
         }
     }
+
+    public bool OnFire
+    {
+        get { return onFire; }
+    }
 }

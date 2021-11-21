@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Scr_DoorTrigger : Scr_TriggerParent
 {
-
+    private bool isBlocked = false;
 
     void Start()
     {
@@ -28,5 +28,11 @@ public class Scr_DoorTrigger : Scr_TriggerParent
         Debug.Log("No More Zombies at the door");
         obj.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         sound.PlaySound();
+    }
+
+
+    public bool IsBlocked
+    {
+        get { return isBlocked; }
     }
 }

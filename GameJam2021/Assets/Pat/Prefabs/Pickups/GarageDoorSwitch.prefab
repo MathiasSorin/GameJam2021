@@ -101,6 +101,7 @@ MonoBehaviour:
   obj: {fileID: 0}
   gizmoColor: {r: 0.5566038, g: 0.5566038, b: 0.5566038, a: 1}
   gizmoColorVisible: {r: 0.4245283, g: 0.4245283, b: 0.4245283, a: 0.27058825}
+  sound: {fileID: 0}
 --- !u!65 &258883259522990504
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -143,7 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isHeld: 0
-  Uiname: Garage Door Remote
+  Uiname: Car key
   pickupSound: {fileID: 8300000, guid: 4dbafcd933b3110489ffc4e595560337, type: 3}
   droppedSound: {fileID: 8300000, guid: 0a7d3ebb58e73334db02e36c3c63fd32, type: 3}
 --- !u!1001 &6601089984262197529
