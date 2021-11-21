@@ -54,6 +54,7 @@ public class Scr_FireplaceTrigger : Scr_TriggerParent
         {
             aux.clip = matchSound;
             hasMatches = true;
+            aux.Play();
         }
     }
     public override void OnTriggerExit(Collider other)
