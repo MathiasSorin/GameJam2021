@@ -111,8 +111,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isHeld: 0
   Uiname: Keys
-  pickupSound: {fileID: 8300000, guid: c445a597efbc1894ebcbccece8c39f1a, type: 3}
-  droppedSound: {fileID: 8300000, guid: 0b329b73e0ff0d746bc295f44722aace, type: 3}
+  pickupSound: {fileID: 8300000, guid: 4dbafcd933b3110489ffc4e595560337, type: 3}
+  droppedSound: {fileID: 8300000, guid: 0a7d3ebb58e73334db02e36c3c63fd32, type: 3}
 --- !u!54 &5863024398377687850
 Rigidbody:
   m_ObjectHideFlags: 0

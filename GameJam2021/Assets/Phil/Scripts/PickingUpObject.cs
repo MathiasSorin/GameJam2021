@@ -162,7 +162,7 @@ public class PickingUpObject : MonoBehaviour
         if (pickUpObjectScript != null)
         {
             pickUpObjectScript.AuxToPlay.clip = pickUpObjectScript.droppedSound;
-            pickUpObjectScript.AuxToPlay.volume = 0.1f;
+            pickUpObjectScript.AuxToPlay.volume = 0.05f;
             pickUpObjectScript.AuxToPlay.Play();
             pickUpObjectScript.isHeld = false;
         }
