@@ -6,10 +6,14 @@ public class Scr_ToiletTrigger : Scr_TriggerParent
 {
     private int objCount = 0;
     private bool isClogged = false;
+    public AudioClip flushSound;
+    private AudioSource aux;
+    public GameObject zombieHand;
 
     void Start()
     {
         GetComponent<Renderer>().material.SetColor("_Color", gizmoColorVisible);
+        aux = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -30,7 +34,9 @@ public class Scr_ToiletTrigger : Scr_TriggerParent
             isClogged = true;
             Debug.Log("Flush the Zombies"); //else objCount++;
             //ToDo: Stop Zombie coming out of toilet
-
+            aux.Play();
+            Destroy(zombieHand);
+            
         }
     }
 
@@ -39,6 +45,7 @@ public class Scr_ToiletTrigger : Scr_TriggerParent
         if(other.GetComponent<Scr_PickupP>() != null)
         {
             objCount++;
+            sound.PlaySound();
         }
 
     }

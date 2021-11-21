@@ -7,6 +7,7 @@ public class Scr_GarageTrigger : Scr_TriggerParent
 
     private bool alarmOn = true;
     private AudioSource aux;
+    public AudioClip beepBeep;
 
     private void Start()
     {
@@ -18,7 +19,10 @@ public class Scr_GarageTrigger : Scr_TriggerParent
         {
             Debug.Log("Beep");
             alarmOn = false;
-            aux.Stop();
+            aux.clip = beepBeep;
+            aux.loop = false;
+            aux.Play();
+            sound.PlaySound();
         }
     }
 

@@ -8,6 +8,7 @@ public class Scr_TriggerParent : MonoBehaviour
     protected bool isOverlapped;
     public Color gizmoColor;
     public Color gizmoColorVisible;
+    public SoundManager sound;
 
     protected bool triggered;
 

@@ -7,6 +7,7 @@ public class Scr_Cupboard : MonoBehaviour
     private bool unlocked = false;
     private bool opened = false;
     private Animator anim;
+    public SoundManager sound;
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -37,6 +38,7 @@ public class Scr_Cupboard : MonoBehaviour
         Debug.Log("This is where door opens");
         //ToDo: Open Door with Lerp
         anim.Play("OpenDoor", 0,0.0f);
+        sound.PlaySound();
         //gameObject.SetActive(false);
     }
 }
