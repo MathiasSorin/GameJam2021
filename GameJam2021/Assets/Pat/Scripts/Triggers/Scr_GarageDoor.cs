@@ -18,14 +18,11 @@ public class Scr_GarageDoor : Scr_TriggerParent
     private bool zombiesActive = true;
 
     private int batteryCount = 0;
+    private bool hasBatteries = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        tr = GetComponent<Transform>();
-        trSnapOne = transform.GetChild(0).GetComponent<Transform>();
-        trSnapTwo = transform.GetChild(1).GetComponent<Transform>();
-        trSnapThree = transform.GetChild(2).GetComponent<Transform>();
         GetComponent<Renderer>().material.SetColor("_Color", gizmoColorVisible);
     }
 
@@ -37,15 +34,19 @@ public class Scr_GarageDoor : Scr_TriggerParent
 
     public override void DoEvent()
     {
-
+        if (batteryCount >= 3 && !hasBatteries)
+        {
+            gameObject.tag = "QuestItem";
+            hasBatteries = true;
+        }
     }
 
     public override void CheckOverlap(string value)
     {
-        if (isOverlapped /*&& plank.isHeld == false*/) DoEvent();
+        DoEvent();
     }
 
-    public override void OnTriggerEnter(Collider other)
+    /*public override void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<Scr_Battery>())
         {
@@ -53,7 +54,17 @@ public class Scr_GarageDoor : Scr_TriggerParent
             batteryCount++;
             Debug.Log(batteryCount);
         }
-    }
+    
+    }*/
 
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.GetComponent<Scr_Battery>())
+        {
+            Destroy(collision.gameObject);
+            batteryCount++;
+            Debug.Log(batteryCount);
+        }
+    }
 
 }

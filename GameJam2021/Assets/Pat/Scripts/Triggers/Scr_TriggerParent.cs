@@ -13,7 +13,7 @@ public class Scr_TriggerParent : MonoBehaviour
 
     void Start()
     {
-        
+        //aux = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -42,7 +42,7 @@ public class Scr_TriggerParent : MonoBehaviour
 
     }
 
-    private void OnDrawGizmos()
+    public virtual void OnDrawGizmos()
     {
         gizmoColor.a = 1.0f; 
         Gizmos.color = gizmoColor;

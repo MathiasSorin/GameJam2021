@@ -24,44 +24,7 @@ public class PickingUpObject : MonoBehaviour
     void Update()
     {
 
-        /*RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.forward, out hit, range))
-        {
-            var pickUpObjectScript = hit.transform.gameObject.GetComponent<Scr_PickupP>();
-            if (pickUpObjectScript != null)
-            {
-                if (hit.transform.gameObject.tag == "QuestItem")
-                {
-                                          
-
-                    if (Input.GetKeyDown(KeyCode.E))
-                    {
-                        if (heldObject == null)
-                        {
-
-                            if (hit.transform.gameObject.tag == "QuestItem")
-                            {
-                                PickupObject(hit.transform.gameObject);
-
-                            }
-                        }
-                        else
-                        {
-                            DropObject();
-
-                        }
-
-                    }
-                }
-                
-
-            }
-        
-              
-                       
-        }
-        */
-       
+           
         
 
 
@@ -79,7 +42,11 @@ public class PickingUpObject : MonoBehaviour
                     {
                         PickupObject(hit.transform.gameObject);
                     }
-
+                    
+                    if (hit.transform.gameObject.tag == "Untagged" && hit.transform.gameObject.GetComponent<Scr_Remote>() != null)
+                    {
+                        Debug.Log("Test");
+                    }
 
                 }
             }

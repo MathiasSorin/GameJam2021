@@ -10,7 +10,7 @@ public class Scr_WindowTrigger : Scr_TriggerParent
     private Transform trSnapTwo;
     private Transform trSnapThree;
     private Scr_Plank plank;
-
+    private AudioSource aux;
     private bool snapOne = false;
     private bool snapTwo = false;
     private bool snapThree = false;
@@ -26,6 +26,7 @@ public class Scr_WindowTrigger : Scr_TriggerParent
         trSnapTwo = transform.GetChild(1).GetComponent<Transform>();
         trSnapThree = transform.GetChild(2).GetComponent<Transform>();
         GetComponent<Renderer>().material.SetColor("_Color",gizmoColorVisible);
+        aux = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -86,14 +87,14 @@ public class Scr_WindowTrigger : Scr_TriggerParent
     public void SetPlank()
     {
         
-            plank.GetComponent<Rigidbody>().useGravity = false;
-            plank.GetComponent<Rigidbody>().isKinematic = true;
-            //plank.transform.Rotate(90, 0, 0, Space.World);
-            plank.transform.localEulerAngles = new Vector3(90,0,0); // set the rotation angle of the plank in the window trigger
-            plank.transform.Rotate(0, Random.Range(-10, 10), 0, Space.Self);
-            isOverlapped = false;
-            plank.SetInPlace = true;
-        
+     plank.GetComponent<Rigidbody>().useGravity = false;
+     plank.GetComponent<Rigidbody>().isKinematic = true;
+     //plank.transform.Rotate(90, 0, 0, Space.World);
+     plank.transform.localEulerAngles = new Vector3(90,0,0); // set the rotation angle of the plank in the window trigger
+     plank.transform.Rotate(0, Random.Range(-10, 10), 0, Space.Self);
+     isOverlapped = false;
+     plank.SetInPlace = true;
+     aux.Play();
     }
 
     public void BoardCheck()
