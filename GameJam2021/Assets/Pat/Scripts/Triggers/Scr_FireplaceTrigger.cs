@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class Scr_FireplaceTrigger : Scr_TriggerParent
 {
@@ -12,10 +13,15 @@ public class Scr_FireplaceTrigger : Scr_TriggerParent
     private bool hasMatches;
     private bool hasGas;
     private bool onFire;
+
+    private Transform fireSpot;
+
+    public GameObject fire;
     // Start is called before the first frame update
     void Start()
     {
         GetComponent<Renderer>().material.SetColor("_Color", gizmoColorVisible);
+        fireSpot = gameObject.transform.GetChild(0).GetComponent<Transform>();
         aux = GetComponent<AudioSource>();
     }
 
@@ -36,6 +42,8 @@ public class Scr_FireplaceTrigger : Scr_TriggerParent
         {
             Debug.Log("Fire: Bye Zombies");
             //ToDo: Fire Feedback & Sound
+            Instantiate(fire, fireSpot);
+            fire.GetComponent<ParticleSystem>().Play();
             aux.clip = fireSound;
             aux.Play();
             onFire = true;
