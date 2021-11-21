@@ -3356,11 +3356,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1227785059}
     m_Modifications:
-    - target: {fileID: 258883259522990498, guid: 065f9408206a6a44c968e6134616c9b1,
-        type: 3}
-      propertyPath: Uiname
-      value: Car key
-      objectReference: {fileID: 0}
     - target: {fileID: 258883259522990505, guid: 065f9408206a6a44c968e6134616c9b1,
         type: 3}
       propertyPath: sound
@@ -3370,11 +3365,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GarageDoorSwitch
-      objectReference: {fileID: 0}
-    - target: {fileID: 258883259522990507, guid: 065f9408206a6a44c968e6134616c9b1,
-        type: 3}
-      propertyPath: m_TagString
-      value: QuestItem
       objectReference: {fileID: 0}
     - target: {fileID: 258883259522990508, guid: 065f9408206a6a44c968e6134616c9b1,
         type: 3}
