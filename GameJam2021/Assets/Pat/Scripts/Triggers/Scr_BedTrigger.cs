@@ -8,6 +8,7 @@ public class Scr_BedTrigger : Scr_TriggerParent
     private bool zombiesUnderBed = true;
     private AudioSource aux;
     public GameObject zombieArms;
+    public AudioClip sweepSound;
 
     private void Start()
     {
@@ -20,6 +21,10 @@ public class Scr_BedTrigger : Scr_TriggerParent
             Destroy(zombieArms);
             zombiesUnderBed = false;
             aux.Stop();
+            aux.volume = 1.0f;
+            aux.clip = sweepSound;
+            aux.loop = false;
+            aux.Play();
             sound.PlaySound();
         }
     }
