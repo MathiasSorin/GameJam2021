@@ -93,11 +93,13 @@ public class Scr_WindowTrigger : Scr_TriggerParent
         
      plank.GetComponent<Rigidbody>().useGravity = false;
      plank.GetComponent<Rigidbody>().isKinematic = true;
+        //plank.SetInPlace = true;
      //plank.transform.Rotate(90, 0, 0, Space.World);
      plank.transform.localEulerAngles = new Vector3(90,0,0); // set the rotation angle of the plank in the window trigger
      plank.transform.Rotate(0, Random.Range(-10, 10), 0, Space.Self);
      isOverlapped = false;
      plank.SetInPlace = true;
+     plank.gameObject.tag = "Untagged";
      aux.Play();
     }
 
