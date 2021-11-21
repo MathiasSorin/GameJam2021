@@ -6,9 +6,10 @@ public class Scr_Cupboard : MonoBehaviour
 {
     private bool unlocked = false;
     private bool opened = false;
+    private Animator anim;
     void Start()
     {
-        
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -26,7 +27,7 @@ public class Scr_Cupboard : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<Scr_Keys>())
         {
-            Destroy(collision.gameObject);
+            //Destroy(collision.gameObject);
             unlocked = true;
         }
     }
@@ -35,5 +36,7 @@ public class Scr_Cupboard : MonoBehaviour
     {
         Debug.Log("This is where door opens");
         //ToDo: Open Door with Lerp
+        anim.Play("OpenDoor", 0,0.0f);
+        //gameObject.SetActive(false);
     }
 }
