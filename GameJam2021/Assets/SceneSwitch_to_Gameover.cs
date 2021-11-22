@@ -12,6 +12,7 @@ public class SceneSwitch_to_Gameover : MonoBehaviour
         void Start()
         {
             Invoke("SceneSwitch", timeBeforeSwitchingScene);
+        Cursor.visible = false;
 
         }
 
